@@ -29,14 +29,14 @@ namespace PdfEditor.Helper.Pdf
 
             gfx.DrawString(text, Font, brush, param.coordinateX, param.coordinateY, XStringFormats.Center);
 
-            byte[] certificatePdf = null;
+            byte[] data = null;
             using (MemoryStream stream = new MemoryStream())
             {
                 newDocument.Save(stream);
-                certificatePdf = stream.ToArray();
+                data = stream.ToArray();
             }
 
-            return certificatePdf;
+            return data;
         }
     }
 }
